@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  opensearch:
+    restart: always
+    image: opensearchproject/opensearch:1.1.0
+    container_name: OpenSearch
+    environment:
+      - discovery.type=single-node
+      - thread_pool.write.queue_size=200
+      - "OPENSEARCH_JAVA_OPTS=-Xms4g -Xmx4g"
+      - DISABLE_SECURITY_PLUGIN=true
+    ports:
+      - 9200:9200
