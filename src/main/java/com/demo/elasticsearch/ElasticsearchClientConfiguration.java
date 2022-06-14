@@ -1,9 +1,6 @@
 package com.demo.elasticsearch;
 
 
-import org.apache.http.HttpHost;
-import org.elasticsearch.client.RestClient;
-import org.elasticsearch.client.RestHighLevelClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.elasticsearch.client.ClientConfiguration;
@@ -20,7 +17,7 @@ public class ElasticsearchClientConfiguration extends AbstractElasticsearchConfi
 
 	@Override
 	@Bean
-	public RestHighLevelClient elasticsearchClient ()
+	public org.elasticsearch.client.RestHighLevelClient elasticsearchClient ()
 	{
 		final ClientConfiguration clientConfiguration =
 				ClientConfiguration.builder().connectedTo("localhost:9200").build();
@@ -48,7 +45,7 @@ public class ElasticsearchClientConfiguration extends AbstractElasticsearchConfi
 //  }httpClient
 
   @Bean
-  public ElasticsearchRestTemplate elasticsearchRestTemplate(RestHighLevelClient elasticsearchClient)
+  public ElasticsearchRestTemplate elasticsearchRestTemplate(org.elasticsearch.client.RestHighLevelClient elasticsearchClient)
   {
     return new ElasticsearchRestTemplate(elasticsearchClient);
   }
