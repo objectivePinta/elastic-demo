@@ -1,6 +1,7 @@
-package com.demo.elasticsearch;
+package com.demo.elasticsearch.service;
 
 
+import com.demo.elasticsearch.model.LogData;
 import lombok.AllArgsConstructor;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;

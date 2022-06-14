@@ -1,4 +1,4 @@
-package com.demo.elasticsearch;
+package com.demo.elasticsearch.model;
 
 
 import lombok.Builder;
@@ -35,7 +35,5 @@ public class LogData {
 
   @Field(type = FieldType.Text, name = "status")
   private String status;
-
-  // Getters and Setters
 
 }
