@@ -21,6 +21,9 @@ public class Article {
     @Field(type = Text)
     private String title;
 
+    @Field(type = Text)
+    private String topic;
+
     @Field(type = FieldType.Nested, includeInParent = true)
     private List<Author> authors;
 }
