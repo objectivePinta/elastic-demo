@@ -70,15 +70,15 @@ public class OpenSearchClientConfiguration {
                 .put("index.number_of_shards", 4)
                 .put("index.number_of_replicas", 3)
         );
-        //Create a set of maps for the index's mappings.
-//        HashMap<String, String> typeMapping = new HashMap<String,String>();
-//        typeMapping.put("type", "integer");
-//        HashMap<String, Object> ageMapping = new HashMap<String, Object>();
-//        ageMapping.put("age", typeMapping);
-//        HashMap<String, Object> mapping = new HashMap<String, Object>();
-//        mapping.put("properties", ageMapping);
-//        createIndexRequest.mapping(mapping);
-//        CreateIndexResponse createIndexResponse = client.indices().create(createIndexRequest, RequestOptions.DEFAULT);
+//        Create a set of maps for the index's mappings.
+        HashMap<String, String> typeMapping = new HashMap<String,String>();
+        typeMapping.put("type", "integer");
+        HashMap<String, Object> ageMapping = new HashMap<String, Object>();
+        ageMapping.put("age", typeMapping);
+        HashMap<String, Object> mapping = new HashMap<String, Object>();
+        mapping.put("properties", ageMapping);
+        createIndexRequest.mapping(mapping);
+        CreateIndexResponse createIndexResponse = client.indices().create(createIndexRequest, RequestOptions.DEFAULT);
 
         //Adding data to the index.
         IndexRequest request = new IndexRequest("custom-index"); //Add a document to the custom-index we created.
