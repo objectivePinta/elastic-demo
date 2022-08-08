@@ -1,0 +1,24 @@
+{
+    "settings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 1
+    },
+    "mappings": {
+        "properties": {
+            "id": {
+                "type": "text"
+            },
+            "name": {
+                "type": "text"
+            },
+            "status": {
+                "type": "keyword",
+                "ignore_above": 256
+            },
+            "date_of_birth": {
+                "type": "date",
+                "format": "date_optional_time||epoch_millis"
+            }
+        }
+    }
+}
